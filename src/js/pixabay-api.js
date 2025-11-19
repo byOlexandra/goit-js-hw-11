@@ -1,0 +1,2 @@
+function getImagesByQuery(query) {
+}
