@@ -1,6 +1,6 @@
 export function getImagesByQuery(query) {
     const baseURL = 'https://pixabay.com';
-    const endPoint = '/api';
+    const endPoint = '/api/';
     const params = new URLSearchParams({
         key: '53346532-56e1a2cf6c50fcc4672e719cf',
         q: query,

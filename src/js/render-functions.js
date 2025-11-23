@@ -13,9 +13,29 @@ export function createGallery(images) {
     const markup = images
         .map(img => {
             return `
-        <a class="gallery-item" href="${img.largeImageURL}">
-            <img src="${img.webformatURL}" alt="${img.tags}" />
-        </a>`;
+        <li class="gallery-item">
+            <a href="${img.largeImageURL}">
+                <img src="${img.webformatURL}" alt="${img.tags}" />
+                <ul class="desc-list">
+                    <li>
+                        <h2>Likes</h2>
+                        <p>${img.likes}</p>
+                    </li>
+                    <li>
+                        <h2>Views</h2>
+                        <p>${img.views}</p>
+                    </li>
+                    <li>
+                        <h2>Comments</h2>
+                        <p>${img.comments}</p>
+                    </li>
+                    <li>
+                        <h2>Downloads</h2>
+                        <p>${img.downloads}</p>
+                    </li>
+                </ul>
+            </a>
+        </li>`;
         })
         .join('');
     gallery.insertAdjacentHTML('beforeend', markup);
