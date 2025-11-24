@@ -1,3 +1,4 @@
+import axios from "axios";
 export function getImagesByQuery(query) {
     const baseURL = 'https://pixabay.com';
     const endPoint = '/api/';
@@ -9,5 +10,6 @@ export function getImagesByQuery(query) {
         safesearch: true,
     })
     const url = `${baseURL}${endPoint}?${params}`;    
-    return fetch(url).then(res => res.json()).then(data => data.hits);
+    // return fetch(url).then(res => res.json()).then(data => data.hits);
+    return axios.get(`${url}`).then(res => res.data.hits);
 }

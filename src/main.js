@@ -11,6 +11,8 @@ import "izitoast/dist/css/iziToast.min.css";
 
 const form = document.querySelector(".form");
 
+//* EVENT
+
 form.addEventListener("submit", e => {
     e.preventDefault();
     const search = e.target.elements['search-text'].value.trim();
@@ -28,9 +30,10 @@ form.addEventListener("submit", e => {
     .then(images => {
         hideLoader();
         if (images.length === 0) {
-            iziToast.info({
+            iziToast.error({
                 title: 'No results',
                 message: 'Sorry, there are no images matching your search query. Please try again!',
+                position: 'topRight'
             })
             return;
         }
