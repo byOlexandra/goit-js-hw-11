@@ -19,7 +19,7 @@ form.addEventListener("submit", e => {
     if (!search) {
         iziToast.error({
             title: 'Error',
-            message: 'Sorry, there are no images matching your search query. Please try again!',
+            message: 'Something went wrong. Please try again.',
             position: 'topRight',
         });
         return;
@@ -31,7 +31,7 @@ form.addEventListener("submit", e => {
         hideLoader();
         if (images.length === 0) {
             iziToast.error({
-                title: 'No results',
+                title: 'Error',
                 message: 'Sorry, there are no images matching your search query. Please try again!',
                 position: 'topRight'
             })
